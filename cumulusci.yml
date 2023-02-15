@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.72.1'
+project:
+    name: dataset-project-2
+    package:
+        name: dataset-project-2
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/dataset-project-2/tests
+            options:
+                outputdir: robot/dataset-project-2/results
+
+    robot_testdoc:
+        options:
+            path: robot/dataset-project-2/tests
+            output: robot/dataset-project-2/doc/dataset-project-2_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
